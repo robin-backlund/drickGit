@@ -29,8 +29,9 @@ function addNewPlayer(){
   }
 
 };
+
 $(document).ready(function() {
     $("#addPlayerForm").submit(function() {
-        addNewPlayer();
+        addNewPlayer()
     });
 });
