@@ -25,13 +25,9 @@ var app = {
     }
 };
 app.initialize();
-var newPlayerName;
-var playerList = [];
-var colorList = ["#1abc9c","#f1c40f","#2ecc71","#e67e22","#3498db","#e74c3c","#9b59b6","#f39c12","#c0392b","#2980b9"];
-var error = false;
-var counter = 0;
 
 
+<<<<<<< HEAD
 function addNewPlayer(){
   newPlayerName = $("#playerName").val();
 
@@ -61,3 +57,5 @@ $(document).ready(function() {
         addNewPlayer();
     });
 });
+=======
+>>>>>>> refs/remotes/robin-backlund/robin1.1
