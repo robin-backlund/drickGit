@@ -25,37 +25,3 @@ var app = {
     }
 };
 app.initialize();
-
-
-<<<<<<< HEAD
-function addNewPlayer(){
-  newPlayerName = $("#playerName").val();
-
-  if(newPlayerName.length < 2){
-    alert("ERROR: Spelaren måste ha ett namn");
-    error = true;
-  }
-  if(counter == 10){
-    alert("ERROR: Maximalt antal spelare");
-    error = true;
-  }
-
-  if(error == false){
-    playerList.push(newPlayerName.toUpperCase());
-    console.log(playerList);
-    counter = counter + 1;
-    $("#player"+counter).html(newPlayerName.toUpperCase());
-    $("#playerName").val("");
-    $("#player"+counter).addClass("fadeInUp");
-    $("#player"+counter).css("opacity","1");
-
-  }
-
-};
-$(document).ready(function() {
-    $("#addPlayerForm").submit(function() {
-        addNewPlayer();
-    });
-});
-=======
->>>>>>> refs/remotes/robin-backlund/robin1.1
