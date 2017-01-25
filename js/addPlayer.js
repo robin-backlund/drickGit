@@ -2,10 +2,13 @@ var newPlayerName;
 var playerList = [];
 var colorList = ["#1abc9c","#f1c40f","#2ecc71","#e67e22","#3498db","#e74c3c","#9b59b6","#f39c12","#c0392b","#2980b9"];
 var error = false;
-var counter = 0;
+var counter = 1;
 
 
 function addNewPlayer(){
+  error = false;
+  counter = playerList.length;
+
   newPlayerName = $("#playerName").val();
 
   if(newPlayerName.length < 2){
@@ -16,22 +19,36 @@ function addNewPlayer(){
     alert("ERROR: Maximalt antal spelare");
     error = true;
   }
-
+  
   if(error == false){
     playerList.push(newPlayerName.toUpperCase());
     console.log(playerList);
-    counter = counter + 1;
-    $("#player"+counter).html(newPlayerName.toUpperCase());
+    
     $("#playerName").val("");
-    $("#player"+counter).addClass("fadeInUp");
-    $("#player"+counter).css("opacity","1");
+    console.log(counter);
+    $("#playerListCont").append("<div class=\"player animated fadeInUp\" id=\"player" + counter + "\"></div>");
+
+    $("#player"+counter).html(newPlayerName.toUpperCase() + "<div class=\"removeThis\">X</div>");
+    
 
   }
 
 };
 
+
+
 $(document).ready(function() {
-    $("#addPlayerForm").submit(function() {
-        addNewPlayer()
+    $("#addPlayerForm").submit(function(e) {
+        addNewPlayer();
+        e.preventDefault();
     });
 });
+
+function removePlayer(){
+  $(".removeThis").each(function(){
+    $(this).click(function(){
+      $(this).parent().remove();
+    })
+    
+  });
+};

@@ -63,36 +63,36 @@ input {
   padding-left: 10px;
   font-size: 18px;
   color: white;
-  opacity: 0;
+
 }
-#playerListCont #player1 {
+#playerListCont #player0 {
   background-color: #1abc9c;
 }
-#playerListCont #player2 {
+#playerListCont #player1 {
   background-color: #f1c40f;
 }
-#playerListCont #player3 {
+#playerListCont #player2 {
   background-color: #2ecc71;
 }
-#playerListCont #player4 {
+#playerListCont #player3 {
   background-color: #e67e22;
 }
-#playerListCont #player5 {
+#playerListCont #player4 {
   background-color: #3498db;
 }
-#playerListCont #player6 {
+#playerListCont #player5 {
   background-color: #e74c3c;
 }
-#playerListCont #player7 {
+#playerListCont #player6 {
   background-color: #9b59b6;
 }
-#playerListCont #player8 {
+#playerListCont #player7 {
   background-color: #f39c12;
 }
-#playerListCont #player9 {
+#playerListCont #player8 {
   background-color: #c0392b;
 }
-#playerListCont #player10 {
+#playerListCont #player9 {
   background-color: #2980b9;
 }
 #insertPlayerCont{
@@ -139,5 +139,22 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
 }
 #playerAdd:active {
   opacity: 0.7;
+  cursor: pointer;
+}
+.removeThis {
+  height: calc((100vh - 160px) / 10);
+  width: 20vw;
+  float: right;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 100;
+
+}
+.removeThis:hover {
+  color: red;
+  cursor: pointer;
+}
+.removeThis:active {
+  color: red;
   cursor: pointer;
 }
