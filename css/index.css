@@ -56,6 +56,7 @@ input {
 #playerListCont{
   width: 100vw;
   height: calc(100vh - 160px);
+  position: relative;
 }
 #playerListCont .player {
   height: calc((100vh - 160px) / 10);
@@ -63,38 +64,10 @@ input {
   padding-left: 10px;
   font-size: 18px;
   color: white;
-  opacity: 0;
+  transition-duration:0.5s;
+  position: relative;
 }
-#playerListCont #player1 {
-  background-color: #1abc9c;
-}
-#playerListCont #player2 {
-  background-color: #f1c40f;
-}
-#playerListCont #player3 {
-  background-color: #2ecc71;
-}
-#playerListCont #player4 {
-  background-color: #e67e22;
-}
-#playerListCont #player5 {
-  background-color: #3498db;
-}
-#playerListCont #player6 {
-  background-color: #e74c3c;
-}
-#playerListCont #player7 {
-  background-color: #9b59b6;
-}
-#playerListCont #player8 {
-  background-color: #f39c12;
-}
-#playerListCont #player9 {
-  background-color: #c0392b;
-}
-#playerListCont #player10 {
-  background-color: #2980b9;
-}
+
 #insertPlayerCont{
   width: 100vw;
   height: 70px;
@@ -127,7 +100,7 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
   color: gray;
 }
 #playerAdd {
-  width: calc(20vw - 21px);
+  width: calc(20vw - 20px);
   float: left;
   height: 70px;
   border: none;
@@ -139,5 +112,22 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
 }
 #playerAdd:active {
   opacity: 0.7;
+  cursor: pointer;
+}
+.removeThis {
+  height: calc((100vh - 160px) / 10);
+  width: 20vw;
+  float: right;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 100;
+
+}
+.removeThis:hover {
+  color: red;
+  cursor: pointer;
+}
+.removeThis:active {
+  color: red;
   cursor: pointer;
 }
