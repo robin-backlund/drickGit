@@ -5,27 +5,36 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.min.css">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Drick</title>
         <meta name="viewport" content="width=device-width, height=device-height" />
         <link rel="stylesheet" href="css/animate.css">
+        <meta name="viewport" content="width=device-width">
         <meta charset="utf-8">
+
     </head>
     <body>
-        <div id="playerListCont">
-
-        </div>
+      <div id="addPlayersCont">
+        <div id="playerListCont"></div>
         <div id="insertPlayerCont">
           <form id="addPlayerForm" autocomplete="off">
-            <input placeholder="LÄGG TILL SPELARE" id="playerName"></input>
+            <input placeholder="SPELARNAMN" id="playerName"></input>
             <button id="playerAdd" type="submit"></button>
           </form>
-
         </div>
         <div id="startBtn">STARTA</div>
+      </div>
+      <div id="playerRollCont">
+        Robin
+      </div>
+
+
     </body>
     <script type="text/javascript" src='js/jquery-3.1.1.min.js'></script>
-    <script type="text/javascript" src='js/fastclick.js'></script>
+    <script type="text/javascript" src='js/touche.js'></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/addPlayer.js"></script>

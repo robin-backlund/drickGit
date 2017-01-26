@@ -11,6 +11,7 @@ $(document).ready(function() {
         addNewPlayer();
         e.preventDefault();
     });
+
 });
 
 function addNewPlayer(){
@@ -42,7 +43,7 @@ function addNewPlayer(){
     $("#playerName").val("");
     $("#playerListCont").append("<div class=\"player animated fadeInUp\" id=\"player" + counter + "\"></div>");
     $("#player"+counter).css("background-color",color);
-    $("#player"+counter).html(newPlayerName.toUpperCase() + "<div class=\"removeThis\">X</div>");
+    $("#player"+counter).html(newPlayerName.toUpperCase() + "<div class=\"removeThis\"><span class=\"glyphicon glyphicon-remove-circle\" aria-hidden=\"true\"></span></div>");
     $("#player"+counter).children("div").click(function() {
       colorList.unshift($(this).parent().css("background-color"));
       playerList.splice(parseInt($(this).parent().attr("id")[6]),1);
@@ -52,7 +53,7 @@ function addNewPlayer(){
       var divParent = $(this).parent();
       $(this).remove();
       divParent.css("height", "0px");
-      divParent.delay(500).fadeOut(0, function(){
+      divParent.delay(200).fadeOut(0, function(){
          divParent.remove();
       });
 
@@ -61,3 +62,10 @@ function addNewPlayer(){
 
     })
 };
+$("#playerName").on('click', function(){
+  $("#playerName").focus();
+});
+$("#playerAdd").on('click', function(){
+    alert("yes");
+    addNewPlayer();
+});
