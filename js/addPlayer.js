@@ -9,6 +9,7 @@ var counter = 0;
 $(document).ready(function() {
     $("#addPlayerForm").submit(function(e) {
         addNewPlayer();
+        $(':focus').blur();
         e.preventDefault();
     });
 
@@ -62,6 +63,7 @@ function addNewPlayer(){
 
 
     })
+
 };
 var alreadyRunning = false;
 function displayError(errorMessage){
