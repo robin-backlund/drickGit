@@ -63,22 +63,27 @@ function addNewPlayer(){
 
     })
 };
-
+var alreadyRunning = false;
 function displayError(errorMessage){
-  $("#errorCont").css("display","block");
-  $("#errorCont").css("opacity","1");
-  $("#errorCont").addClass("bounceIn");
-  $("#errorCont").html(errorMessage);
-  setTimeout(function(){
-    $("#errorCont").removeClass("bounceIn");
-    $("#errorCont").addClass("bounceOut");
+  if(alreadyRunning == false){
+    alreadyRunning = true;
+    $("#errorCont").css("display","block");
+    $("#errorCont").css("opacity","1");
+    $("#errorCont").addClass("bounceIn");
+    $("#errorCont").html(errorMessage);
     setTimeout(function(){
-      $("#errorCont").removeClass("bounceOut");
-      $("#errorCont").css("display","none");
-      $("#errorCont").css("opacity","0");
-      $("#errorCont").html("");
-    },500)
-  },3000);
+      $("#errorCont").removeClass("bounceIn");
+      $("#errorCont").addClass("bounceOut");
+      setTimeout(function(){
+        $("#errorCont").removeClass("bounceOut");
+        $("#errorCont").css("display","none");
+        $("#errorCont").css("opacity","0");
+        $("#errorCont").html("");
+        alreadyRunning = false;
+      },700)
+    },3000);
+  }
+
 };
 
 $("#playerName").on('click', function(){
