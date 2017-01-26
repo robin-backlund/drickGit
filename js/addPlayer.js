@@ -16,12 +16,13 @@ $(document).ready(function() {
 
 function addNewPlayer(){
     newPlayerName = $("#playerName").val();
+
   if(newPlayerName.length < 2){
-    alert("ERROR: Spelaren måste ha ett namn");
+    displayError("Spelaren måste ha ett namn");
     return;
   }
   if(ids.length==0){
-    alert("ERROR: Maximalt antal spelare");
+    displayError("Max 10 spelare");
     return;
   }
 
@@ -62,10 +63,24 @@ function addNewPlayer(){
 
     })
 };
+
+function displayError(errorMessage){
+  $("#errorCont").css("display","block");
+  $("#errorCont").css("opacity","1");
+  $("#errorCont").addClass("bounceIn");
+  $("#errorCont").html(errorMessage);
+  setTimeout(function(){
+    $("#errorCont").removeClass("bounceIn");
+    $("#errorCont").addClass("bounceOut");
+    setTimeout(function(){
+      $("#errorCont").removeClass("bounceOut");
+      $("#errorCont").css("display","none");
+      $("#errorCont").css("opacity","0");
+      $("#errorCont").html("");
+    },500)
+  },3000);
+};
+
 $("#playerName").on('click', function(){
   $("#playerName").focus();
-});
-$("#playerAdd").on('click', function(){
-    alert("yes");
-    addNewPlayer();
 });
