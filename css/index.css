@@ -143,6 +143,13 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
   height: 100vh;
   background-color: #1abc9c;
   margin-top: -20px;
+  display: none;
+}
+.roll1 {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1abc9c;
+
   text-align: center;
   line-height: 100vh;
   color: white;
@@ -150,6 +157,31 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
   font-size: 80px;
   letter-spacing: 5px;
 }
+.roll2 {
+  display: none;
+  width: 100vw;
+  height: 50vh;
+  background-color: red;
+  text-align: center;
+  line-height: 50vh;
+  color: white;
+  font-family: "nameFont";
+  font-size: 80px;
+  letter-spacing: 5px;
+}
+.roll3 {
+  display: none;
+  width: 100vw;
+  height: calc(100vh / 3);
+  background-color: green;
+  text-align: center;
+  line-height: 50vh;
+  color: white;
+  font-family: "nameFont";
+  font-size: 80px;
+  letter-spacing: 5px;
+}
+
 #errorCont {
   width: 100vw;
   height: 70px;
