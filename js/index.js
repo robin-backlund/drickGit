@@ -25,3 +25,32 @@ var app = {
     }
 };
 app.initialize();
+var newPlayerName;
+var playerList = [];
+var error = false;
+var counter = 0;
+
+function addNewPlayer(){
+  newPlayerName = $("#playerName").val();
+
+  if(newPlayerName.length < 2){
+    alert("ERROR: Spelaren måste ha ett namn");
+    error = true;
+  }
+  if(counter == 10){
+    alert("ERROR: Maximalt antal spelare");
+    error = true;
+  }
+
+  if(error == false){
+    playerList.push(newPlayerName);
+    $("#playerName").val("");
+    counter = counter + 1;
+    $("#player"+counter).addClass("bounceInUp");
+    $("#player"+counter).css("opacity","1");
+  }
+
+
+
+
+};

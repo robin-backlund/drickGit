@@ -1,3 +1,0 @@
-function playerRoll(array, div) {
-  
-}
