@@ -15,7 +15,14 @@ $(document).ready(function() {
     });
 
 });
-
+function debugList() {
+  playerList[0] = {name:"Fredrik", clr:colorList[0]}
+  playerList[1] = {name:"Axel", clr:colorList[1]}
+  playerList[2] = {name:"Robin", clr:colorList[2]}
+  playerList[3] = {name:"Philip", clr:colorList[3]}
+  playerList[4] = {name:"Asta", clr:colorList[4]}
+  playerList[5] = {name:"Svahn", clr:colorList[5]}
+}
 function addNewPlayer(){
     newPlayerName = $("#playerName").val();
 
@@ -94,5 +101,5 @@ $("#playerName").on('click', function(){
 });
 
 $("#startBtn").on('click', function() {
-  playerRoll(playerList,1);
+  playerRoll(playerList);
 })
