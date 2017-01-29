@@ -7,6 +7,7 @@ var error = false;
 var counter = 0;
 
 $(document).ready(function() {
+  
     $("#addPlayerForm").submit(function(e) {
         addNewPlayer();
         $(':focus').blur();
@@ -32,7 +33,7 @@ function addNewPlayer(){
 
 
 
-    playerList.push(newPlayerName.toUpperCase());
+
     var color;
     if(displayColor.length!=0) {
       color = displayColor.shift();
@@ -41,7 +42,7 @@ function addNewPlayer(){
     else {
       color = colorList.splice(0,1)[0];
     }
-
+    playerList.push({name:newPlayerName.toUpperCase(), clr:color});
     $("#playerName").val("");
     $("#playerListCont").append("<div class=\"player animated fadeInUp\" id=\"player" + counter + "\"></div>");
     $("#player"+counter).css("background-color",color);
@@ -91,3 +92,7 @@ function displayError(errorMessage){
 $("#playerName").on('click', function(){
   $("#playerName").focus();
 });
+
+$("#startBtn").on('click', function() {
+  playerRoll(playerList,1);
+})
