@@ -1,6 +1,9 @@
 var prevRoll = 0;
-var tick = new Howl({src:['tick.mp3'], html5:true});
-var plop = new Howl({src:['plop.wav'], html5:true});
+
+
+var tick = new Howl({src:['tick.mp3']});
+var plop = new Howl({src:['plop.wav']});
+
 var roll = 0;
 function playerRoll(array, div) {
   if(array.length<2 ) {
@@ -14,7 +17,6 @@ function playerRoll(array, div) {
   $(".roll3").css("display","block");
   rollnr = Math.floor(Math.random()*15+30);
   var prev = 0;
-
   for(var i = 0; i < rollnr;i++) {
     var currentTiming = Math.floor((300+rollnr)*Math.pow(Math.E,(i/(0.32*rollnr))))-300;
     setTimeout(function() {
@@ -44,7 +46,7 @@ function doStuff(array,div,index) {
 
 function getIndex(length,prev) {
 
-  var index = Math.floor((prev+Math.random()*(length-1)+1))%length;
+  var index = Math.floor((prev+Math.random()*(length-2)+1))%length;
   return index;
 }
 
