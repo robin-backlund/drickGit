@@ -7,6 +7,7 @@ var error = false;
 var counter = 0;
 
 $(document).ready(function() {
+  
     $("#addPlayerForm").submit(function(e) {
         addNewPlayer();
         $(':focus').blur();
