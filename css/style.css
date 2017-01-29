@@ -1,0 +1,155 @@
+html {
+  touch-action: manipulation;
+}
+.fixfixed .header,
+.fixfixed .footer {
+    position: absolute;
+}
+#container {
+  width: 100%;
+  height: 100vh;
+  background-color: #eeeeee;
+  text-align: center;
+}
+#roll {
+  position: absolute;
+  z-index: 999;
+  display: none;
+  width: 100%;
+  height: 100vh;
+  background-color: deepskyblue;
+}
+#rollName {
+  font-family: "nameFont" !important;
+  font-weight: normal !important;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  height: 200px;
+  line-height: 200px;
+  width: 100%;
+  position:absolute;
+  top:0; left:0; bottom:0; right:0;
+  margin: auto;
+  letter-spacing: 4px;
+}
+#rollName2 {
+  font-family: "nameFont" !important;
+  font-weight: normal !important;
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  height: 200px;
+  line-height: 200px;
+  width: 100%;
+  position:absolute;
+  top:0; left:0; bottom:0; right:0;
+  margin: auto;
+  letter-spacing: 4px;
+}
+#roll2 {
+  position:fixed;
+  padding:0;
+  margin:0;
+  top:50%;
+  left:0;
+  width: 100%;
+  height: 50%;
+  background-color: lightgray;
+  z-index: 99;
+  display: none;
+}
+#button {
+  width: 60%;
+  height: 100px;
+  background-color: green;
+  position: relative;
+}
+@font-face {
+  font-family: "nameFont";
+  src: url("name3.ttf") format("opentype");
+}
+#inputContainer {
+  width: 100%;
+  height: 80px;
+  background-color: #1FDA9A;
+  position: absolute;
+  bottom: 0;
+  text-align: left;
+}
+#playerNameInput {
+  width: 70%;
+  height: 100%;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: white;
+  padding-left: 3%;
+  float: left;
+}
+#playerNameSubmit {
+  width: 26%;
+  float: right;
+  height: 80px;
+  background-color: white;
+  opacity: 0.2;
+  text-align: center;
+  line-height: 90px;
+  font-size: 50px;
+  overflow: hidden;
+  position: relative;
+}
+#playerNameSubmit:hover {
+  opacity: 0.25;
+}
+#playerNameSubmit:active {
+  opacity: 0.25;
+}
+#animator {
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: gray;
+  display: none;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+#animatorIcon {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 50px;
+  height: 50px;
+}
+.grayColor::-webkit-input-placeholder {
+    color: #a7a7a7 !important;
+}
+#header {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  position: fixed;
+  z-index: 99999999;
+}
+#headerFill {
+  width: 100%;
+  height: 60px;
+}
+#titleError {
+  width: 100%;
+  height: 60px;
+  line-height: 80px;
+  color: gray;
+  font-weight: bold;
+}
+#playerShowcase {
+  height: 490px;
+  width: 100%;
+  background-color: red;
+}
+.playerListed {
+  width: 100%;
+  height: 48.7px;
+  float: left;
+}

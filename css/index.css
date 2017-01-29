@@ -18,182 +18,128 @@
  */
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -moz-touch-callout: none;
-    -ms-touch-callout: none;
-    touch-callout: none;
-    -webkit-user-drag: none;
-    -moz-user-drag: none;
-    -ms-user-drag: none;
-    user-drag: none;
 }
-@font-face {
-    font-family: 'nameFont';
-    src: url('nameFont.TTF');
-    font-weight: normal;
-    font-style: normal;
-}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #E4E4E4)
+    );
+    background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
     margin:0px;
     padding:0px;
+    text-transform:uppercase;
     width:100%;
-    margin-top: 20px;
-    overflow: hidden;
 }
 
-input {
-  -webkit-user-select: auto !important;
-  -khtml-user-select: auto !important;
-  -moz-user-select: auto !important;
-  -ms-user-select: auto !important;
-  user-select: auto !important;
-}
-#playerListCont{
-  width: 100vw;
-  height: calc(100vh - 160px);
-  position: relative;
-}
-#playerListCont .player {
-  height: calc((100vh - 160px) / 10);
-  line-height: calc((100vh - 160px) / 10);
-  padding-left: 10px;
-  font-size: 18px;
-  color: white;
-  transition-duration:0.2s;
-  position: relative;
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
 }
 
-#insertPlayerCont{
-  width: 100vw;
-  height: 70px;
-  background-color: #ecf0f1;
-  position: absolute;
-  bottom: 70px;
-  -webkit-box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
--moz-box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
-box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
-}
-#startBtn {
-  width: 100vw;
-  height: 70px;
-  position: absolute;
-  bottom: 0;
-  background-color: #2ecc71;
-  text-align: center;
-  line-height: 70px;
-  color: white;
-  font-size: 30px;
-}
-#playerName {
-  height: 70px;
-  width: calc(75vw);
-  border: none;
-  float: left;
-  outline: none;
-  padding-left: 20px;
-  font-size: 25px;
-  color: gray;
-  border-radius: 0px;
-}
-#playerAdd {
-  width: 25vw;
-  float: left;
-  height: 70px;
-  line-height: 80px;
-  padding: 0px;
-  border: none;
-  background-color: #2ECC71;
-  color: rgba(255,255,255,0.9);
-  font-size: 40px;
-}
-#playerAdd:active {
-  opacity: 0.7;
-  cursor: pointer;
-}
-.removeThis {
-  height: calc((100vh - 160px) / 10);
-  width: 20vw;
-  float: right;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 100;
-  line-height: calc((100vh - 100px) / 10)
-}
-.removeThis:hover {
-  color: red;
-  cursor: pointer;
-}
-.removeThis:active {
-  color: red;
-  cursor: pointer;
-}
-#playerRollCont {
-  width: 100vw;
-  height: 100vh;
-  background-color: #1abc9c;
-  margin-top: -20px;
-  display: none;
-}
-.roll1 {
-  width: 100vw;
-  height: 100vh;
-  background-color: #1abc9c;
-
-  text-align: center;
-  line-height: 100vh;
-  color: white;
-  font-family: "nameFont";
-  font-size: 80px;
-  letter-spacing: 5px;
-}
-.roll2 {
-  display: none;
-  width: 100vw;
-  height: 0vh;
-  background-color: red;
-  text-align: center;
-  line-height: 50vh;
-  color: white;
-  font-family: "nameFont";
-  font-size: 80px;
-  letter-spacing: 5px;
-}
-.roll3 {
-  display: none;
-  width: 100vw;
-  height: calc(0vh / 3);
-  background-color: green;
-  text-align: center;
-  line-height: 50vh;
-  color: white;
-  font-family: "nameFont";
-  font-size: 80px;
-  letter-spacing: 5px;
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
 }
 
-#errorCont {
-  width: 100vw;
-  height: 70px;
-  position: absolute;
-  background-color: rgb(231, 76, 60);
-  bottom: 0px;
-  text-align: center;
-  line-height: 70px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  letter-spacing: 1px;
-  opacity: 0;
-  display: none;
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+*
+{
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+input
+{
+-webkit-user-select: auto !important;
+-khtml-user-select: auto !important;
+-moz-user-select: auto !important;
+-ms-user-select: auto !important;
+user-select: auto !important;
+}
+*
+{
+-webkit-touch-callout: none;
+-moz-touch-callout: none;
+-ms-touch-callout: none;
+touch-callout: none;
+}
+*{
+-webkit-user-drag: none;
+-moz-user-drag: none;
+-ms-user-drag: none;
+user-drag: none;
 }

@@ -1,53 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/jquery.mobile.min.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Drick</title>
-        <meta name="viewport" content="width=device-width, height=device-height" />
-        <link rel="stylesheet" href="css/animate.css">
-        <meta name="viewport" content="width=device-width">
-        <meta charset="utf-8">
-
-    </head>
-    <body>
-      <audio id="plop" src="plop.wav"></audio>
-      <audio id="tick" src="tick.mp3"></audio>
-      <div id="addPlayersCont" style="display: ;">
-        <div id="playerListCont"></div>
-        <div id="insertPlayerCont">
-          <form id="addPlayerForm" autocomplete="off">
-            <input placeholder="SPELARNAMN" id="playerName"></input>
-            <button id="playerAdd" type="submit">
-              <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-            </button>
-          </form>
-        </div>
-        <div id="startBtn">STARTA</div>
-        <div id="errorCont" class="animated">Spelaren måste ha ett namn</div>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, height=device-height" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <meta charset="utf-8">
+    <title>Drickspel</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        <div id="titleError">Lägg till spelare</div>
       </div>
-      <div id="playerRollCont">
-        <div class="roll1">Hej</div>
-        <div class="roll2">Asd</div>
-        <div class="roll3"></div>
+      <div id="headerFill"></div>
+      <div id="playerShowcase">
       </div>
-
-
-
+      <div id="inputContainer">
+        <form id="form" style="height: 100%;">
+          <input type="text" id="playerNameInput">
+            <button id="playerNameSubmit" tabindex="-1">
+            <div id="animator"></div>
+            <span id="animatorIcon" class="glyphicon glyphicon-plus-sign"></span>
+          </button>
+        </form>
+      </div>
+      </div>
+      <div id="roll">
+        <div id="rollName"></div>
+      </div>
+      <div id="roll2">
+        <div id="rollName2"></div>
+      </div>
     </body>
-    <script type="text/javascript" src='js/jquery-3.1.1.min.js'></script>
-    <script type="text/javascript" src='js/touche.js'></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type='application/javascript' src='js/fastclick.js'></script>
+    <script type="text/javascript" src="js/howler.js"></script>
+    <script type="text/javascript" src="js/playerRoll.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/howler.min.js"></script>
-    <script type="text/javascript" src="js/addPlayer.js"></script>
-    <script type="text/javascript" src="js/playerRoll.js"></script>
-
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script type="text/javascript" src="js/playerAdd.js"></script>
 </html>
