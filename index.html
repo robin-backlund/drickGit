@@ -16,9 +16,7 @@
 
     </head>
     <body>
-      <audio id="plop" src="plop.wav"></audio>
-      <audio id="tick" src="tick.mp3"></audio>
-      <div id="addPlayersCont" style="display: ;">
+      <div id="addPlayersCont" style="display: none;">
         <div id="playerListCont"></div>
         <div id="insertPlayerCont">
           <form id="addPlayerForm" autocomplete="off">
@@ -31,10 +29,17 @@
         <div id="startBtn">STARTA</div>
         <div id="errorCont" class="animated">Spelaren måste ha ett namn</div>
       </div>
-      <div id="playerRollCont">
+      <div id="playerRollCont" style="display: none;">
         <div class="roll1 roll">Hej</div>
         <div class="roll2 roll">Asd</div>
         <div class="roll3 roll"></div>
+      </div>
+
+      <div id="finalDisplay">
+        <div id="finalCategory">Drick</div>
+        <div id="finalNames">Robin Fredde Philip</div>
+        <div id="finalChallenge"></div>
+        <div id="rollAgain">KÖR IGEN</div>
       </div>
 
 
