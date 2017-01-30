@@ -52,14 +52,14 @@ function playerRoll(array, div) {
         else {
           setTimeout(function() {
             rollCategory();
-          }, 2000);
+          }, 1000);
         }
       }, chosenPlayers);
     }
     else {
       setTimeout(function() {
         rollCategory();
-      }, 2000);
+      }, 1000);
     }
   }, chosenPlayers);
 }
