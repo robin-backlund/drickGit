@@ -1,6 +1,6 @@
 var prevRoll = 0;
-var tick = new Howl({src:['tick.mp3'], html5:true});
-var plop = new Howl({src:['plop.wav'], html5:true});
+var tick = new Howl({src:['tick.mp3']});
+var plop = new Howl({src:['plop.wav']});
 var copy = [];
 var roll;
 function playerRoll(array, div) {
