@@ -2,10 +2,11 @@ var prevRoll = 0;
 var tick = new Howl({src:['tick.mp3']});
 var plop = new Howl({src:['plop.wav']});
 var copy = [];
-var chosenPlayers = [];
+var chosenPlayers;
 var counter = 1;
 var roll;
 function playerRoll(array, div) {
+  chosenPlayers = [];
   for(var i = 0; i < array.length; i++) {
     copy[i] = array[i];
   }
@@ -15,9 +16,25 @@ function playerRoll(array, div) {
   }
   $("#addPlayersCont").css("display", "none");
   $("#playerRollCont").css("display", "block");
+  $("#playerRollCont").css("height", "100vh");
   $(".roll1").css("display","block");
+  $(".roll1").css("height", "100vh");
+  $(".roll1").css("line-height", "100vh");
+
   $(".roll2").css("display","block");
+  $(".roll2").css("height","0vh");
+  $(".roll2").css("line-height", "100vh");
+
   $(".roll3").css("display","block");
+  $(".roll3").css("height","0vh");
+  $(".roll3").css("line-height", "100vh");
+
+  $("#finalDisplay").removeClass("animated slideInLeft");
+  $(".roll4").css("height","0vh");
+  $(".roll4").html("Kategori");
+  $(".roll4").css("background-color", "lightgray");
+
+
   rollnr = Math.floor(Math.random()*15+30);
   var prev = 0;
   doRoll(array, 1, function(){
@@ -47,6 +64,9 @@ function playerRoll(array, div) {
           });
           copy.splice(prevRoll,1)
           doRoll(copy, 3, function() {
+            setTimeout(function() {
+              rollCategory();
+            }, 1000);
           }, chosenPlayers);
         }
         else {
@@ -85,6 +105,7 @@ function doRoll(array, div, callback, chosen) {
         }, 300);
         setTimeout(function() {
           if(typeof(callback)=="function") {
+            chosen.push(array[prevRoll]);
             callback();
           }
         }, 500);
@@ -99,7 +120,7 @@ function doRoll(array, div, callback, chosen) {
       roll+=1;
     }, currentTiming);
   }
-  chosen.push(array[prevRoll]);
+
 }
 
 function getIndex(length,prev) {

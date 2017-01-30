@@ -220,6 +220,7 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
   position: relative;
   margin-top: 20px;
   background-color: #1abc9c;
+  z-index: 10;
 }
 #finalCategory {
   width: 90vw;
@@ -234,6 +235,7 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
   font-family: "nameFont";
   letter-spacing: 2px;
 }
+
 #finalNames {
   width: 90vw;
   height: 40px;
@@ -256,7 +258,7 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
   text-align: center;
   line-height: 60px;
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   transition-duration: 0.5s;
 }
 #rollAgain:active {
@@ -266,9 +268,10 @@ box-shadow: 0px -2px 6px 0px rgba(0,0,0,0.1);
 }
 #finalChallenge {
   height: calc(100vh - 310px);
-  background-color: blue;
   margin-top: 20px;
   width: 90vw;
   margin-left: auto;
   margin-right: auto;
+  font-size: 30px;
+  color: white;
 }
