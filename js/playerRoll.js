@@ -2,6 +2,8 @@ var prevRoll = 0;
 var tick = new Howl({src:['tick.mp3']});
 var plop = new Howl({src:['plop.wav']});
 var copy = [];
+var chosenPlayers = [];
+var counter = 1;
 var roll;
 function playerRoll(array, div) {
   for(var i = 0; i < array.length; i++) {
@@ -44,14 +46,25 @@ function playerRoll(array, div) {
             lineHeight: '33.333vh'
           });
           copy.splice(prevRoll,1)
-          doRoll(copy, 3);
+          doRoll(copy, 3, function() {
+          }, chosenPlayers);
         }
-      });
+        else {
+          setTimeout(function() {
+            rollCategory();
+          }, 2000);
+        }
+      }, chosenPlayers);
     }
-  });
+    else {
+      setTimeout(function() {
+        rollCategory();
+      }, 2000);
+    }
+  }, chosenPlayers);
 }
 
-function doRoll(array, div, callback) {
+function doRoll(array, div, callback, chosen) {
 
   if(array.length<2) {
     return;
@@ -86,6 +99,7 @@ function doRoll(array, div, callback) {
       roll+=1;
     }, currentTiming);
   }
+  chosen.push(array[prevRoll]);
 }
 
 function getIndex(length,prev) {
