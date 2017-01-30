@@ -103,3 +103,6 @@ $("#playerName").on('click', function(){
 $("#startBtn").on('click', function() {
   playerRoll(playerList);
 })
+$("#rollAgain").on('click', function() {
+  restart();
+})

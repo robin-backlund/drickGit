@@ -16,7 +16,7 @@
 
     </head>
     <body>
-      <div id="addPlayersCont" style="display: none;">
+      <div id="addPlayersCont" style="display: block;">
         <div id="playerListCont"></div>
         <div id="insertPlayerCont">
           <form id="addPlayerForm" autocomplete="off">
@@ -30,12 +30,12 @@
         <div id="errorCont" class="animated">Spelaren måste ha ett namn</div>
       </div>
       <div id="playerRollCont" style="display: none;">
-        <div class="roll1 roll">Hej</div>
-        <div class="roll2 roll">Asd</div>
+        <div class="roll1 roll"></div>
+        <div class="roll2 roll"></div>
         <div class="roll3 roll"></div>
       </div>
-
-      <div id="finalDisplay">
+      <div id="categoryRoll" class="roll4 roll" style="display:none">Kategori</div>
+      <div id="finalDisplay" style="display:none">
         <div id="finalCategory">Drick</div>
         <div id="finalNames">Robin Fredde Philip</div>
         <div id="finalChallenge"></div>
@@ -54,5 +54,9 @@
     <script type="text/javascript" src="js/howler.min.js"></script>
     <script type="text/javascript" src="js/addPlayer.js"></script>
     <script type="text/javascript" src="js/playerRoll.js"></script>
+    <script type="text/javascript" src="js/categoryRoll.js"></script>
+    <script type="text/javascript" src="js/challenges/challenges_1player.js"></script>
+    <script type="text/javascript" src="js/challenges/challenges_2player.js"></script>
+    <script type="text/javascript" src="js/challenges/challenges_3player.js"></script>
 
 </html>

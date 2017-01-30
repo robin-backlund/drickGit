@@ -2,8 +2,11 @@ var prevRoll = 0;
 var tick = new Howl({src:['tick.mp3']});
 var plop = new Howl({src:['plop.wav']});
 var copy = [];
+var chosenPlayers;
+var counter = 1;
 var roll;
 function playerRoll(array, div) {
+  chosenPlayers = [];
   for(var i = 0; i < array.length; i++) {
     copy[i] = array[i];
   }
@@ -13,13 +16,29 @@ function playerRoll(array, div) {
   }
   $("#addPlayersCont").css("display", "none");
   $("#playerRollCont").css("display", "block");
+  $("#playerRollCont").css("height", "100vh");
   $(".roll1").css("display","block");
+  $(".roll1").css("height", "100vh");
+  $(".roll1").css("line-height", "100vh");
+
   $(".roll2").css("display","block");
+  $(".roll2").css("height","0vh");
+  $(".roll2").css("line-height", "100vh");
+
   $(".roll3").css("display","block");
+  $(".roll3").css("height","0vh");
+  $(".roll3").css("line-height", "100vh");
+
+  $("#finalDisplay").removeClass("animated slideInLeft");
+  $(".roll4").css("height","0vh");
+  $(".roll4").html("Kategori");
+  $(".roll4").css("background-color", "lightgray");
+
+
   rollnr = Math.floor(Math.random()*15+30);
   var prev = 0;
   doRoll(array, 1, function(){
-    if(Math.random()>0.66&&array.length>=3) {
+    if(Math.random()>(1-2/5)&&array.length>=3) {
       $(".roll1").animate({
         height: '50vh',
         lineHeight: '50vh'
@@ -44,14 +63,28 @@ function playerRoll(array, div) {
             lineHeight: '33.333vh'
           });
           copy.splice(prevRoll,1)
-          doRoll(copy, 3);
+          doRoll(copy, 3, function() {
+            setTimeout(function() {
+              rollCategory();
+            }, 1000);
+          }, chosenPlayers);
         }
-      });
+        else {
+          setTimeout(function() {
+            rollCategory();
+          }, 1000);
+        }
+      }, chosenPlayers);
     }
-  });
+    else {
+      setTimeout(function() {
+        rollCategory();
+      }, 1000);
+    }
+  }, chosenPlayers);
 }
 
-function doRoll(array, div, callback) {
+function doRoll(array, div, callback, chosen) {
 
   if(array.length<2) {
     return;
@@ -72,6 +105,7 @@ function doRoll(array, div, callback) {
         }, 300);
         setTimeout(function() {
           if(typeof(callback)=="function") {
+            chosen.push(array[prevRoll]);
             callback();
           }
         }, 500);
@@ -86,6 +120,7 @@ function doRoll(array, div, callback) {
       roll+=1;
     }, currentTiming);
   }
+
 }
 
 function getIndex(length,prev) {
