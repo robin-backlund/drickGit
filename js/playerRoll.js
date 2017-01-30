@@ -38,7 +38,7 @@ function playerRoll(array, div) {
   rollnr = Math.floor(Math.random()*15+30);
   var prev = 0;
   doRoll(array, 1, function(){
-    if(Math.random()>0.66&&array.length>=3) {
+    if(Math.random()>(1-2/5)&&array.length>=3) {
       $(".roll1").animate({
         height: '50vh',
         lineHeight: '50vh'

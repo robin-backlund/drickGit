@@ -64,12 +64,11 @@ function displayFinal() {
   for(var i = 0; i < chosenPlayers.length; i++) {
     string+=chosenPlayers[i].name+" ";
   }
-
-  var challengeString = chosenCategory[0].list[Math.floor(Math.random()*chosenCategory[0].list.length)]
-
+  var index = Math.floor(Math.random()*chosenCategory[0].list.length)
+  var challengeString = chosenCategory[0].list[index];
   $("#finalNames").html(string);
   $("#finalChallenge").html(challengeString);
-
+  $("#finalDisplay").css("background-color", chosenCategory[0].clr);
 }
 
 function restart() {
